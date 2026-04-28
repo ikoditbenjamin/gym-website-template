@@ -4,6 +4,8 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface User {
   name: string;
   email: string;
+  membershipTier?: string;
+  enrolledClasses: string[];
 }
 
 interface AuthContextType {
@@ -19,7 +21,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const isLoggedIn = !!user;
 
-  const login = (user: User) => setUser(user);
+  const login = (user: User) => setUser({ enrolledClasses: [], ...user });
   const logout = () => setUser(null);
 
   return (

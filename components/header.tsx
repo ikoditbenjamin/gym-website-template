@@ -5,7 +5,15 @@ import { Menu, X, MapPin, Moon, Sun, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "@/context/theme-context";
 
-const navItems = [
+type NavItem = {
+  label: string;
+  sub: string;
+  href: string;
+  badge?: string;
+  dropdown?: { label: string; href: string }[];
+};
+
+const navItems: NavItem[] = [
   { label: "Home", sub: "Start here", href: "/" },
   { label: "About", sub: "Our team", href: "/about" },
   { label: "Classes", sub: "Training", href: "/classes" },

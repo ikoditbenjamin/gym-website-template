@@ -26,7 +26,7 @@ export default function SignupForm() {
 
     setLoading(true);
     try {
-      await login(email, password);
+      await login(email, password, name);
       router.push("/dashboard");
     } catch (error) {
       setError("Signup failed. Please try again.");

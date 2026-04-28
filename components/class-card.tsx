@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, Users, Zap, ArrowRight } from "lucide-react";
+import { Clock, Users, ArrowRight } from "lucide-react";
 
 interface ClassCardProps {
   id: string;
